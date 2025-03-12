@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width device-width,initial-scale=1.0">
+    <title>menu order</title>
+  </head>
+<body>
+  <h1>ORDER</h1>
+  <form method="post">
+    <label>MENU:</label>
+    <input type="text" name="item" >
+
+    <button type="submit" name="action" value="print_menu">add</button>
+
+    <label>TABLE</label>
+    <input type="number" name="table_no" >
+    <input type="text" name="customer_name" >
+
+    <button type="submit" name="action" value="reserve_table">Book</button>
+
+    <label>ORDER</label>
+    <input type="text" name="items">
+    <input type="text" name="customer_name">
+    <button type="submit" name="action" value="take_order">order</button>
+
+  </form>
+  <a href="{{url_for('hotel')}}"></a>
+</body>
+</html>
