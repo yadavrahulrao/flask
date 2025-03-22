@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width device-width, initial-scale= 1.0">
+    <title>transition details</title>
+  </head>
+<body>
+  <h1>{{account.name}}</h1>
+  <p>{{account.balance}}</p>
+  <form method="post">
+    <label> Enter amount :</label>
+    <input type="number" name="amount" required>
+
+    <button type="submit" name="action" value="deposite">deposite</button>
+    <button type="submit" name="action" value="debit">withdraw</button>
+  </form>
+  <a href="{{url_for('bank')}}">back to home</a>
+</body>
+</html>

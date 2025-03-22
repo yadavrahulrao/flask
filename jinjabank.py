@@ -11,7 +11,7 @@ def bank():
 
 @app.route('/transition',methods = ['GET','POST'])
 def transition():
-  message = ""
+  message = " "
   if request.method == 'POST':
     action = request.form['action']
     amount = int(request.form['amount'])
@@ -21,4 +21,4 @@ def transition():
     elif action == 'debit' :
       message = account.debit(amount)
 
-  return render_template("transition.html",account = account , message = message)
+  return render_template("transition.html",account = account ,message = message)

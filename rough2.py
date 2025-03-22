@@ -1,16 +1,32 @@
-from flask import Flask,request,render_template
-import pdb
+from flask import Flask, request, jsonify , render_template
+import json
+
 app = Flask(__name__)
 
-@app.route('/login', methods=['POST', 'GET'])
+with open('dummydata.json') as f:
+    users_data = json.load(f)
+
+
+@app.route('/', methods=['GET'])
 def login():
-    error = None
-    if request.method == 'POST':
-        if valid_login(request.form['username'],
-                       request.form['password']):
-            return log_the_user_in(request.form['username'])
-        else:
-            error = 'Invalid username/password'
-    # the code below is executed if the request method
-    # was GET or the credentials were invalid
-    return render_template('login.html', error=error)
+
+    username = request.args.get('username')
+    password = request.args.get('password')
+
+  
+    if not username or not password:
+        missing_fields = []
+        if not username:
+            missing_fields.append("username")
+            return render_template("userpassentry.html")
+        if not password:
+            missing_fields.append("password")
+        return render_template("passentry.html")
+
+    for dummydata in users_data:
+        if dummydata['username'] == username and dummydata['password'] == password:
+            return render_template("login.html")
+
+    return render_template("invalid.html")
+
+
