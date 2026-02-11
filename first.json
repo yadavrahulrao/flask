@@ -1,0 +1,13 @@
+{
+  "name": "rahul",
+  "score":8.23,
+  "isAdmin":false,
+  "Lincence":null,
+  "shop":["food","cloth","oil"],
+  "obj":{
+    "name":"nested",
+    "marks":5.5,
+    "shop2":["foood","cloth","oil2"]
+  }
+
+}
