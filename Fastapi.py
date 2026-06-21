@@ -110,7 +110,7 @@ def update_product(data:ProductDTO,product_id:int):
 
   for idx,i in enumerate(products):
     if i.get("id") == product_id:
-      products[idx] == data.model_dump()
+      products[idx] = data.model_dump()
       return{
         "status":"updated",
         "product":data
