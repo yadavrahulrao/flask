@@ -1,10 +1,4 @@
-#dynamic url 
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-data = [
+[
   {
     "id": 1,
     "firstName": "Liam",
@@ -16,7 +10,7 @@ data = [
     "city": "New York",
     "country": "USA",
     "occupation": "Software Engineer",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 2,
@@ -29,7 +23,7 @@ data = [
     "city": "Chicago",
     "country": "USA",
     "occupation": "Product Manager",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 3,
@@ -42,7 +36,7 @@ data = [
     "city": "Austin",
     "country": "USA",
     "occupation": "Graphic Designer",
-    "isActive": False
+    "isActive": false
   },
   {
     "id": 4,
@@ -55,7 +49,7 @@ data = [
     "city": "Seattle",
     "country": "USA",
     "occupation": "Data Analyst",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 5,
@@ -68,7 +62,7 @@ data = [
     "city": "Boston",
     "country": "USA",
     "occupation": "Teacher",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 6,
@@ -81,7 +75,7 @@ data = [
     "city": "San Francisco",
     "country": "USA",
     "occupation": "UX Designer",
-    "isActive": False
+    "isActive": false
   },
   {
     "id": 7,
@@ -94,7 +88,7 @@ data = [
     "city": "Denver",
     "country": "USA",
     "occupation": "Architect",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 8,
@@ -107,7 +101,7 @@ data = [
     "city": "Miami",
     "country": "USA",
     "occupation": "Marketing Specialist",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 9,
@@ -120,7 +114,7 @@ data = [
     "city": "Dallas",
     "country": "USA",
     "occupation": "Accountant",
-    "isActive": True
+    "isActive": false
   },
   {
     "id": 10,
@@ -133,7 +127,7 @@ data = [
     "city": "Los Angeles",
     "country": "USA",
     "occupation": "HR Manager",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 11,
@@ -146,7 +140,7 @@ data = [
     "city": "Phoenix",
     "country": "USA",
     "occupation": "Civil Engineer",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 12,
@@ -159,7 +153,7 @@ data = [
     "city": "Portland",
     "country": "USA",
     "occupation": "Content Writer",
-    "isActive": False
+    "isActive": false
   },
   {
     "id": 13,
@@ -172,7 +166,7 @@ data = [
     "city": "Atlanta",
     "country": "USA",
     "occupation": "Doctor",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 14,
@@ -185,7 +179,7 @@ data = [
     "city": "Nashville",
     "country": "USA",
     "occupation": "Student",
-    "isActive": True
+    "isActive": true
   },
   {
     "id": 15,
@@ -198,68 +192,6 @@ data = [
     "city": "Houston",
     "country": "USA",
     "occupation": "Business Analyst",
-    "isActive": False
+    "isActive": false
   }
 ]
-
-
-
-# @app.get("/profile/{name}")
-# def dynamic(name):
-#     return f"you added a {name} the profile added"
-
-
-# @app.get("/{name}/{age}")
-# def age(name,age):
-#     return f"{name} is {age} years old"
-
-
-
-@app.get("/usernames")
-def usernames():
-    list = []
-    for i in data:
-        
-        list.append(i["firstName"])
-        
-    return list
-
-
-@app.get("/user/{id}")
-def userid(id:int):
-    for i in data:
-        if i["id"]== id :
-            return i
-        
-        
-@app.get("/userage/{age}")
-def userage(age:int):
-    
-    list2 = []
-    
-    for i in data :
-        if i["age"] == age :
-            list2.append(i)
-            
-    return list2
-        
-    
-
-@app.get("/femaleuser")
-def femaleuser():
-    list3 = []
-    for i in data:
-        if i["gender"] == "Female":
-            list3.append(i)
-            
-    return list3
-
-
-@app.get("/inactiveuser")
-def inactiveuser():
-    list4 = []
-    for i in data :
-        if i["isActive"] == False :
-            list4.append(i)
-            
-    return list4
