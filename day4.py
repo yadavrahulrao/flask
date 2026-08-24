@@ -19,7 +19,7 @@ def items(skip:int = 0 , limit : int = 10):
 
 #required query parameters - if we dont have default query paramerers , then we can take them .
 @app.get("/search")
-def required(q:str,a:int,b=bool):
+def required(q:str,a:int,b:bool):
     return {
         "query":q,
         "a":a,
